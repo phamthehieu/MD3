@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="txt">
+<button id="btn" onclick="countDown()">Run</button>
+<div id="time-countdown"></div>
+<script>
+    function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms))
+
+
+
+    }
+
+    async function countDown() {
+        let a = document.getElementById('txt').value;
+        while (a > 0) {
+            document.getElementById('time-countdown').innerHTML = a;
+            a--;
+            await sleep(1000);
+        }
+        document.getElementById('time-countdown').innerHTML = "counter finished";
+    }
+</script>
+</body>
+</html>
